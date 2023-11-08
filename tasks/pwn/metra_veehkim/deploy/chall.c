@@ -16,7 +16,7 @@ int check(char c) {
 int main() {
     setvbuf(stdin, NULL, _IONBF, 0);
     setvbuf(stdout, NULL, _IONBF, 0);
-    char *addr;
+    char *addr = 0;
     printf("Address: ");
     scanf("%lu%*c", &addr);
     char *mem = mmap(addr, 0x2000, 7, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
@@ -24,6 +24,7 @@ int main() {
         puts("Invalid address");
         return 0;
     }
+    memset(mem, 0, 0x2000);
     printf("Code: ");
     int n = read(0, addr, 0x1000);
     if (n < 1) {
