@@ -8,3 +8,14 @@ services:
     cpus: 1
     pids_limit: 64
     mem_limit: 512m
+    volumes:
+      - "./orders:/app/orders"
+  cleaner:
+    image: c4tbuts4d/dedcleaner:latest
+    restart: unless-stopped
+    volumes:
+      - "./orders:/orders"
+    environment:
+      - DELETE_AFTER=15m
+      - SLEEP=15m
+      - DIRS=/orders

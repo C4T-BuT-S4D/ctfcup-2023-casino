@@ -20,8 +20,6 @@ COPY flag.txt /
 RUN echo "nobody:x:1337:1337:::" > /etc/passwd
 RUN echo "nobody::1337:nobody" > /etc/group
 
-RUN mkdir /app/orders && chown nobody:nobody /app/orders
-
 WORKDIR /app
 USER nobody
 

@@ -8,7 +8,7 @@
 
 ```sh
 cd deploy/
-docker compose -p orders up --build -d
+./build.sh
 ```
 
 ## Public
