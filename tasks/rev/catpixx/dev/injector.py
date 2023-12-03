@@ -112,7 +112,7 @@ WIN_METHOD = """
 def smali_candidates(apk_dir: str) -> dict[str, str]:
     result = {}
 
-    for fn in glob(f"{apk_dir}/smali/**/*.smali", recursive=True):
+    for fn in glob(f"{apk_dir}/smali/**/*.smali"):
         with open(fn) as f:
             source = f.read()
 
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     import sys
     import random
 
-    random.seed(0x1337BEEF)
+    random.seed(0x1338BEEF)
 
     if len(sys.argv) != 2:
         print(f"usage: {sys.argv[0]} <apktool output dir>", file=sys.stderr)
