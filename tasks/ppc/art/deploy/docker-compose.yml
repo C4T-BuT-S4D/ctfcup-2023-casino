@@ -1,0 +1,10 @@
+version: "2.4"
+services:
+  task:
+    build: .
+    ports:
+      - "12345:12345"
+    restart: unless-stopped
+    cpus: 1
+    pids_limit: 64
+    mem_limit: 512m
