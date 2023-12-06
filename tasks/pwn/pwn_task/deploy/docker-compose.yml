@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+  pwn:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "13003:13003"
+    cpus: 1
+    pids_limit: 1024
+    mem_limit: 512m
+    environment:
+      TOKEN: task_token
