@@ -8,9 +8,7 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY ./text.png ./text.png
-
-COPY ./task.py ./task.py
+COPY . .
 
 RUN chmod +x ./task.py
 

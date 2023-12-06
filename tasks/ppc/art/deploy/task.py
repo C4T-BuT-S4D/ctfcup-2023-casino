@@ -72,7 +72,7 @@ def challenge_round(x: int, y: int, face: str):
     print("Great! Moving on...")
 
 
-if __name__ == "__main__":
+def challenge():
     picture = "".join(
         [fg or bg for fg, bg in zip(load_text_mask(), generate_random_bg())]
     )
@@ -93,3 +93,9 @@ if __name__ == "__main__":
         challenge_round(x, y, face)
 
     print("...we're done. Thanks! Bye.")
+
+if __name__ == "__main__":
+    from task_token_notimportant import check_task_token
+    check_task_token()
+
+    challenge()
