@@ -95,7 +95,8 @@ def challenge():
     print("...we're done. Thanks! Bye.")
 
 if __name__ == "__main__":
-    from task_token_notimportant import check_task_token
-    check_task_token()
+    import os
+    if input("task token: ") != os.getenv("TASK_TOKEN"):
+        exit(42)
 
     challenge()

@@ -2,9 +2,10 @@ version: "2.4"
 services:
   task:
     build: .
+    environment:
+      - "TASK_TOKEN=b1d5f0d1e58be008"
     ports:
       - "12345:12345"
     restart: unless-stopped
-    cpus: 1
-    pids_limit: 64
-    mem_limit: 512m
+    cpus: 2
+    mem_limit: 2g
