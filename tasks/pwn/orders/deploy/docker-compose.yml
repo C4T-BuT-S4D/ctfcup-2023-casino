@@ -6,7 +6,7 @@ services:
     ports:
       - "13002:13002"
     cpus: 1
-    pids_limit: 64
+    pids_limit: 1024
     mem_limit: 512m
     volumes:
       - "./orders:/app/orders"
