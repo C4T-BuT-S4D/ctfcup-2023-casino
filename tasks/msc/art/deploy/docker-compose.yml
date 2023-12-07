@@ -3,7 +3,7 @@ services:
   task:
     build: .
     environment:
-      - "TASK_TOKEN=b1d5f0d1e58be008"
+      - "TASK_TOKEN=task_token"
     ports:
       - "12345:12345"
     restart: unless-stopped
