@@ -1,0 +1,14 @@
+import base64
+import zlib
+
+CORRECT = {{ CORRECT }}
+
+def check(flag: str) -> bool:
+    for i in range(10):
+        ours = zlib.compress(flag.encode())
+        for _ in range(10):
+            b = base64.b64encode(ours)
+            for i, c in enumerate(b):
+                if CORRECT[i] ** 1000 != c ** 1000:
+                    return False
+    return True
