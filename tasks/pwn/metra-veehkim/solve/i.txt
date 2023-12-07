@@ -1,0 +1,692 @@
+
+and byte [r10 + 0x61], r14b
+and byte [r11 + 0x61], r13b
+and byte [r13 + 0x61], r12b
+and byte [r13 + 0x61], r13b
+and byte [r13 + 0x61], r9b
+and byte [r14 + 0x61], r10b
+and byte [r15 + 0x61], r11b
+and byte [r8 + 0x61], r13b
+and byte [r8], r12b
+and byte [r9 + 0x61], r12b
+and byte [r9 + 0x61], r13b
+and byte [r9 + riz*2 + 0x61], r14b
+and byte [rax + 0x20], ch
+and byte [rax + 0x4d], ch
+and byte [rax + 0x56], ch
+and byte [rax + 0x5f], ch
+and byte [rax + 0x61], ch
+and byte [rax + 0x65], ch
+and byte [rax + 0x68], ch
+and byte [rax + 0x69], ch
+and byte [rax + 0x6b], ch
+and byte [rax + 0x6d], ch
+and byte [rax + 0x72], ch
+and byte [rax + 0x74], ch
+and byte [rax + rbp*2 + 0x61], dh
+and byte [rax + riz + 0x61], dh
+and byte [rax], ah
+and byte [rbp + 0x20], ah
+and byte [rbp + 0x20], ch
+and byte [rbp + 0x20], cl
+and byte [rbp + 0x4d], ah
+and byte [rbp + 0x4d], ch
+and byte [rbp + 0x4d], cl
+and byte [rbp + 0x56], ah
+and byte [rbp + 0x56], ch
+and byte [rbp + 0x56], cl
+and byte [rbp + 0x5f], ah
+and byte [rbp + 0x5f], ch
+and byte [rbp + 0x5f], cl
+and byte [rbp + 0x61], ah
+and byte [rbp + 0x61], ch
+and byte [rbp + 0x61], cl
+and byte [rbp + 0x65], ah
+and byte [rbp + 0x65], ch
+and byte [rbp + 0x65], cl
+and byte [rbp + 0x68], ah
+and byte [rbp + 0x68], ch
+and byte [rbp + 0x68], cl
+and byte [rbp + 0x69], ah
+and byte [rbp + 0x69], ch
+and byte [rbp + 0x69], cl
+and byte [rbp + 0x6b], ah
+and byte [rbp + 0x6b], ch
+and byte [rbp + 0x6b], cl
+and byte [rbp + 0x6d], ah
+and byte [rbp + 0x6d], ch
+and byte [rbp + 0x6d], cl
+and byte [rbp + 0x72], ah
+and byte [rbp + 0x72], ch
+and byte [rbp + 0x72], cl
+and byte [rbp + 0x74], ah
+and byte [rbp + 0x74], ch
+and byte [rbp + 0x74], cl
+and byte [rbp + rbp*2 + 0x61], dh
+and byte [rbp + rcx*2 + 0x61], dh
+and byte [rbp + riz*2 + 0x61], dh
+and byte [rbx + 0x20], ch
+and byte [rbx + 0x4d], ch
+and byte [rbx + 0x56], ch
+and byte [rbx + 0x5f], ch
+and byte [rbx + 0x61], ch
+and byte [rbx + 0x65], ch
+and byte [rbx + 0x68], ch
+and byte [rbx + 0x69], ch
+and byte [rbx + 0x6b], ch
+and byte [rbx + 0x6d], ch
+and byte [rbx + 0x72], ch
+and byte [rbx + 0x74], ch
+and byte [rbx + rbp*2 + 0x61], dh
+and byte [rcx + 0x20], ah
+and byte [rcx + 0x20], ch
+and byte [rcx + 0x4d], ah
+and byte [rcx + 0x4d], ch
+and byte [rcx + 0x56], ah
+and byte [rcx + 0x56], ch
+and byte [rcx + 0x5f], ah
+and byte [rcx + 0x5f], ch
+and byte [rcx + 0x61], ah
+and byte [rcx + 0x61], ch
+and byte [rcx + 0x65], ah
+and byte [rcx + 0x65], ch
+and byte [rcx + 0x68], ah
+and byte [rcx + 0x68], ch
+and byte [rcx + 0x69], ah
+and byte [rcx + 0x69], ch
+and byte [rcx + 0x6b], ah
+and byte [rcx + 0x6b], ch
+and byte [rcx + 0x6d], ah
+and byte [rcx + 0x6d], ch
+and byte [rcx + 0x72], ah
+and byte [rcx + 0x72], ch
+and byte [rcx + 0x74], ah
+and byte [rcx + 0x74], ch
+and byte [rcx + rbp*2 + 0x61], dh
+and byte [rcx + riz*2 + 0x61], dh
+and byte [rdi + 0x20], bl
+and byte [rdi + 0x4d], bl
+and byte [rdi + 0x56], bl
+and byte [rdi + 0x5f], bl
+and byte [rdi + 0x61], bl
+and byte [rdi + 0x65], bl
+and byte [rdi + 0x68], bl
+and byte [rdi + 0x69], bl
+and byte [rdi + 0x6b], bl
+and byte [rdi + 0x6d], bl
+and byte [rdi + 0x72], bl
+and byte [rdi + 0x74], bl
+and byte [rdi + rbx*2 + 0x61], dh
+and byte [rdx + 0x20], dh
+and byte [rdx + 0x4d], dh
+and byte [rdx + 0x56], dh
+and byte [rdx + 0x5f], dh
+and byte [rdx + 0x61], dh
+and byte [rdx + 0x65], dh
+and byte [rdx + 0x68], dh
+and byte [rdx + 0x69], dh
+and byte [rdx + 0x6b], dh
+and byte [rdx + 0x6d], dh
+and byte [rdx + 0x72], dh
+and byte [rdx + 0x74], dh
+and byte [rdx + rsi*2 + 0x61], dh
+and byte [rsi + 0x20], dl
+and byte [rsi + 0x4d], dl
+and byte [rsi + 0x56], dl
+and byte [rsi + 0x5f], dl
+and byte [rsi + 0x61], dl
+and byte [rsi + 0x65], dl
+and byte [rsi + 0x68], dl
+and byte [rsi + 0x69], dl
+and byte [rsi + 0x6b], dl
+and byte [rsi + 0x6d], dl
+and byte [rsi + 0x72], dl
+and byte [rsi + 0x74], dl
+and byte [rsi + rdx*2 + 0x61], dh
+and byte [rsp + rsi*2 + 0x61], dh
+and byte gs:[r9 + 0x61], r12b
+and byte gs:[rax + 0x61], ch
+and byte gs:[rax], ah
+and byte gs:[rbp + 0x61], ah
+and byte gs:[rbp + 0x61], ch
+and byte gs:[rbp + 0x61], cl
+and byte gs:[rbx + 0x61], ch
+and byte gs:[rcx + 0x61], ah
+and byte gs:[rcx + 0x61], ch
+and byte gs:[rcx + riz*2 + 0x61], dh
+and byte gs:[rdi + 0x61], bl
+and byte gs:[rdx + 0x61], dh
+and byte gs:[rsi + 0x61], dl
+imul ebp, dword [rax + 0x20], 0x61
+imul ebp, dword [rax + 0x20], 0x61616161
+imul ebp, dword [rax + 0x4d], 0x61
+imul ebp, dword [rax + 0x4d], 0x61616161
+imul ebp, dword [rax + 0x56], 0x61
+imul ebp, dword [rax + 0x56], 0x61616161
+imul ebp, dword [rax + 0x5f], 0x61
+imul ebp, dword [rax + 0x5f], 0x61616161
+imul ebp, dword [rax + 0x61], 0x61
+imul ebp, dword [rax + 0x61], 0x61616161
+imul ebp, dword [rax + 0x65], 0x61
+imul ebp, dword [rax + 0x65], 0x61616161
+imul ebp, dword [rax + 0x68], 0x61
+imul ebp, dword [rax + 0x68], 0x61616161
+imul ebp, dword [rax + 0x69], 0x61
+imul ebp, dword [rax + 0x69], 0x61616161
+imul ebp, dword [rax + 0x6b], 0x61
+imul ebp, dword [rax + 0x6b], 0x61616161
+imul ebp, dword [rax + 0x6d], 0x61
+imul ebp, dword [rax + 0x6d], 0x61616161
+imul ebp, dword [rax + 0x72], 0x61
+imul ebp, dword [rax + 0x72], 0x61616161
+imul ebp, dword [rax + 0x74], 0x61
+imul ebp, dword [rax + 0x74], 0x61616161
+imul ebp, dword [rbp + 0x20], 0x61
+imul ebp, dword [rbp + 0x20], 0x61616161
+imul ebp, dword [rbp + 0x4d], 0x61
+imul ebp, dword [rbp + 0x4d], 0x61616161
+imul ebp, dword [rbp + 0x56], 0x61
+imul ebp, dword [rbp + 0x56], 0x61616161
+imul ebp, dword [rbp + 0x5f], 0x61
+imul ebp, dword [rbp + 0x5f], 0x61616161
+imul ebp, dword [rbp + 0x61], 0x61
+imul ebp, dword [rbp + 0x61], 0x61616161
+imul ebp, dword [rbp + 0x65], 0x61
+imul ebp, dword [rbp + 0x65], 0x61616161
+imul ebp, dword [rbp + 0x68], 0x61
+imul ebp, dword [rbp + 0x68], 0x61616161
+imul ebp, dword [rbp + 0x69], 0x61
+imul ebp, dword [rbp + 0x69], 0x61616161
+imul ebp, dword [rbp + 0x6b], 0x61
+imul ebp, dword [rbp + 0x6b], 0x61616161
+imul ebp, dword [rbp + 0x6d], 0x61
+imul ebp, dword [rbp + 0x6d], 0x61616161
+imul ebp, dword [rbp + 0x72], 0x61
+imul ebp, dword [rbp + 0x72], 0x61616161
+imul ebp, dword [rbp + 0x74], 0x61
+imul ebp, dword [rbp + 0x74], 0x61616161
+imul ebp, dword [rbx + 0x20], 0x61
+imul ebp, dword [rbx + 0x20], 0x61616161
+imul ebp, dword [rbx + 0x4d], 0x61
+imul ebp, dword [rbx + 0x4d], 0x61616161
+imul ebp, dword [rbx + 0x56], 0x61
+imul ebp, dword [rbx + 0x56], 0x61616161
+imul ebp, dword [rbx + 0x5f], 0x61
+imul ebp, dword [rbx + 0x5f], 0x61616161
+imul ebp, dword [rbx + 0x61], 0x61
+imul ebp, dword [rbx + 0x61], 0x61616161
+imul ebp, dword [rbx + 0x65], 0x61
+imul ebp, dword [rbx + 0x65], 0x61616161
+imul ebp, dword [rbx + 0x68], 0x61
+imul ebp, dword [rbx + 0x68], 0x61616161
+imul ebp, dword [rbx + 0x69], 0x61
+imul ebp, dword [rbx + 0x69], 0x61616161
+imul ebp, dword [rbx + 0x6b], 0x61
+imul ebp, dword [rbx + 0x6b], 0x61616161
+imul ebp, dword [rbx + 0x6d], 0x61
+imul ebp, dword [rbx + 0x6d], 0x61616161
+imul ebp, dword [rbx + 0x72], 0x61
+imul ebp, dword [rbx + 0x72], 0x61616161
+imul ebp, dword [rbx + 0x74], 0x61
+imul ebp, dword [rbx + 0x74], 0x61616161
+imul ebp, dword [rcx + 0x20], 0x61
+imul ebp, dword [rcx + 0x20], 0x61616161
+imul ebp, dword [rcx + 0x4d], 0x61
+imul ebp, dword [rcx + 0x4d], 0x61616161
+imul ebp, dword [rcx + 0x56], 0x61
+imul ebp, dword [rcx + 0x56], 0x61616161
+imul ebp, dword [rcx + 0x5f], 0x61
+imul ebp, dword [rcx + 0x5f], 0x61616161
+imul ebp, dword [rcx + 0x61], 0x61
+imul ebp, dword [rcx + 0x61], 0x61616161
+imul ebp, dword [rcx + 0x65], 0x61
+imul ebp, dword [rcx + 0x65], 0x61616161
+imul ebp, dword [rcx + 0x68], 0x61
+imul ebp, dword [rcx + 0x68], 0x61616161
+imul ebp, dword [rcx + 0x69], 0x61
+imul ebp, dword [rcx + 0x69], 0x61616161
+imul ebp, dword [rcx + 0x6b], 0x61
+imul ebp, dword [rcx + 0x6b], 0x61616161
+imul ebp, dword [rcx + 0x6d], 0x61
+imul ebp, dword [rcx + 0x6d], 0x61616161
+imul ebp, dword [rcx + 0x72], 0x61
+imul ebp, dword [rcx + 0x72], 0x61616161
+imul ebp, dword [rcx + 0x74], 0x61
+imul ebp, dword [rcx + 0x74], 0x61616161
+imul ebp, dword gs:[rax + 0x61], 0x61
+imul ebp, dword gs:[rax + 0x61], 0x61616161
+imul ebp, dword gs:[rbp + 0x61], 0x61
+imul ebp, dword gs:[rbp + 0x61], 0x61616161
+imul ebp, dword gs:[rbx + 0x61], 0x61
+imul ebp, dword gs:[rbx + 0x61], 0x61616161
+imul ebp, dword gs:[rcx + 0x61], 0x61
+imul ebp, dword gs:[rcx + 0x61], 0x61616161
+imul ebx, dword [rdi + 0x20], 0x61
+imul ebx, dword [rdi + 0x20], 0x61616161
+imul ebx, dword [rdi + 0x4d], 0x61
+imul ebx, dword [rdi + 0x4d], 0x61616161
+imul ebx, dword [rdi + 0x56], 0x61
+imul ebx, dword [rdi + 0x56], 0x61616161
+imul ebx, dword [rdi + 0x5f], 0x61
+imul ebx, dword [rdi + 0x5f], 0x61616161
+imul ebx, dword [rdi + 0x61], 0x61
+imul ebx, dword [rdi + 0x61], 0x61616161
+imul ebx, dword [rdi + 0x65], 0x61
+imul ebx, dword [rdi + 0x65], 0x61616161
+imul ebx, dword [rdi + 0x68], 0x61
+imul ebx, dword [rdi + 0x68], 0x61616161
+imul ebx, dword [rdi + 0x69], 0x61
+imul ebx, dword [rdi + 0x69], 0x61616161
+imul ebx, dword [rdi + 0x6b], 0x61
+imul ebx, dword [rdi + 0x6b], 0x61616161
+imul ebx, dword [rdi + 0x6d], 0x61
+imul ebx, dword [rdi + 0x6d], 0x61616161
+imul ebx, dword [rdi + 0x72], 0x61
+imul ebx, dword [rdi + 0x72], 0x61616161
+imul ebx, dword [rdi + 0x74], 0x61
+imul ebx, dword [rdi + 0x74], 0x61616161
+imul ebx, dword gs:[rdi + 0x61], 0x61
+imul ebx, dword gs:[rdi + 0x61], 0x61616161
+imul ecx, dword [rbp + 0x20], 0x61
+imul ecx, dword [rbp + 0x20], 0x61616161
+imul ecx, dword [rbp + 0x4d], 0x61
+imul ecx, dword [rbp + 0x4d], 0x61616161
+imul ecx, dword [rbp + 0x56], 0x61
+imul ecx, dword [rbp + 0x56], 0x61616161
+imul ecx, dword [rbp + 0x5f], 0x61
+imul ecx, dword [rbp + 0x5f], 0x61616161
+imul ecx, dword [rbp + 0x61], 0x61
+imul ecx, dword [rbp + 0x61], 0x61616161
+imul ecx, dword [rbp + 0x65], 0x61
+imul ecx, dword [rbp + 0x65], 0x61616161
+imul ecx, dword [rbp + 0x68], 0x61
+imul ecx, dword [rbp + 0x68], 0x61616161
+imul ecx, dword [rbp + 0x69], 0x61
+imul ecx, dword [rbp + 0x69], 0x61616161
+imul ecx, dword [rbp + 0x6b], 0x61
+imul ecx, dword [rbp + 0x6b], 0x61616161
+imul ecx, dword [rbp + 0x6d], 0x61
+imul ecx, dword [rbp + 0x6d], 0x61616161
+imul ecx, dword [rbp + 0x72], 0x61
+imul ecx, dword [rbp + 0x72], 0x61616161
+imul ecx, dword [rbp + 0x74], 0x61
+imul ecx, dword [rbp + 0x74], 0x61616161
+imul ecx, dword gs:[rbp + 0x61], 0x61
+imul ecx, dword gs:[rbp + 0x61], 0x61616161
+imul edx, dword [rsi + 0x20], 0x61
+imul edx, dword [rsi + 0x20], 0x61616161
+imul edx, dword [rsi + 0x4d], 0x61
+imul edx, dword [rsi + 0x4d], 0x61616161
+imul edx, dword [rsi + 0x56], 0x61
+imul edx, dword [rsi + 0x56], 0x61616161
+imul edx, dword [rsi + 0x5f], 0x61
+imul edx, dword [rsi + 0x5f], 0x61616161
+imul edx, dword [rsi + 0x61], 0x61
+imul edx, dword [rsi + 0x61], 0x61616161
+imul edx, dword [rsi + 0x65], 0x61
+imul edx, dword [rsi + 0x65], 0x61616161
+imul edx, dword [rsi + 0x68], 0x61
+imul edx, dword [rsi + 0x68], 0x61616161
+imul edx, dword [rsi + 0x69], 0x61
+imul edx, dword [rsi + 0x69], 0x61616161
+imul edx, dword [rsi + 0x6b], 0x61
+imul edx, dword [rsi + 0x6b], 0x61616161
+imul edx, dword [rsi + 0x6d], 0x61
+imul edx, dword [rsi + 0x6d], 0x61616161
+imul edx, dword [rsi + 0x72], 0x61
+imul edx, dword [rsi + 0x72], 0x61616161
+imul edx, dword [rsi + 0x74], 0x61
+imul edx, dword [rsi + 0x74], 0x61616161
+imul edx, dword gs:[rsi + 0x61], 0x61
+imul edx, dword gs:[rsi + 0x61], 0x61616161
+imul esi, dword [rax + rbp*2 + 0x61], 0x61
+imul esi, dword [rax + rbp*2 + 0x61], 0x61616161
+imul esi, dword [rax + riz + 0x61], 0x61
+imul esi, dword [rax + riz + 0x61], 0x61616161
+imul esi, dword [rbp + rbp*2 + 0x61], 0x61
+imul esi, dword [rbp + rbp*2 + 0x61], 0x61616161
+imul esi, dword [rbp + rcx*2 + 0x61], 0x61
+imul esi, dword [rbp + rcx*2 + 0x61], 0x61616161
+imul esi, dword [rbp + riz*2 + 0x61], 0x61
+imul esi, dword [rbp + riz*2 + 0x61], 0x61616161
+imul esi, dword [rbx + rbp*2 + 0x61], 0x61
+imul esi, dword [rbx + rbp*2 + 0x61], 0x61616161
+imul esi, dword [rcx + rbp*2 + 0x61], 0x61
+imul esi, dword [rcx + rbp*2 + 0x61], 0x61616161
+imul esi, dword [rcx + riz*2 + 0x61], 0x61
+imul esi, dword [rcx + riz*2 + 0x61], 0x61616161
+imul esi, dword [rdi + rbx*2 + 0x61], 0x61
+imul esi, dword [rdi + rbx*2 + 0x61], 0x61616161
+imul esi, dword [rdx + 0x20], 0x61
+imul esi, dword [rdx + 0x20], 0x61616161
+imul esi, dword [rdx + 0x4d], 0x61
+imul esi, dword [rdx + 0x4d], 0x61616161
+imul esi, dword [rdx + 0x56], 0x61
+imul esi, dword [rdx + 0x56], 0x61616161
+imul esi, dword [rdx + 0x5f], 0x61
+imul esi, dword [rdx + 0x5f], 0x61616161
+imul esi, dword [rdx + 0x61], 0x61
+imul esi, dword [rdx + 0x61], 0x61616161
+imul esi, dword [rdx + 0x65], 0x61
+imul esi, dword [rdx + 0x65], 0x61616161
+imul esi, dword [rdx + 0x68], 0x61
+imul esi, dword [rdx + 0x68], 0x61616161
+imul esi, dword [rdx + 0x69], 0x61
+imul esi, dword [rdx + 0x69], 0x61616161
+imul esi, dword [rdx + 0x6b], 0x61
+imul esi, dword [rdx + 0x6b], 0x61616161
+imul esi, dword [rdx + 0x6d], 0x61
+imul esi, dword [rdx + 0x6d], 0x61616161
+imul esi, dword [rdx + 0x72], 0x61
+imul esi, dword [rdx + 0x72], 0x61616161
+imul esi, dword [rdx + 0x74], 0x61
+imul esi, dword [rdx + 0x74], 0x61616161
+imul esi, dword [rdx + rsi*2 + 0x61], 0x61
+imul esi, dword [rdx + rsi*2 + 0x61], 0x61616161
+imul esi, dword [rsi + rdx*2 + 0x61], 0x61
+imul esi, dword [rsi + rdx*2 + 0x61], 0x61616161
+imul esi, dword [rsp + rsi*2 + 0x61], 0x61
+imul esi, dword [rsp + rsi*2 + 0x61], 0x61616161
+imul esi, dword gs:[rcx + riz*2 + 0x61], 0x61
+imul esi, dword gs:[rdx + 0x61], 0x61
+imul esi, dword gs:[rdx + 0x61], 0x61616161
+imul esp, dword [rax], 0x20
+imul esp, dword [rax], 0x4d
+imul esp, dword [rax], 0x56
+imul esp, dword [rax], 0x5f
+imul esp, dword [rax], 0x61
+imul esp, dword [rax], 0x61616120
+imul esp, dword [rax], 0x6161614d
+imul esp, dword [rax], 0x61616156
+imul esp, dword [rax], 0x6161615f
+imul esp, dword [rax], 0x61616161
+imul esp, dword [rax], 0x61616165
+imul esp, dword [rax], 0x61616168
+imul esp, dword [rax], 0x61616169
+imul esp, dword [rax], 0x6161616b
+imul esp, dword [rax], 0x6161616d
+imul esp, dword [rax], 0x61616172
+imul esp, dword [rax], 0x61616174
+imul esp, dword [rax], 0x65
+imul esp, dword [rax], 0x68
+imul esp, dword [rax], 0x69
+imul esp, dword [rax], 0x6b
+imul esp, dword [rax], 0x6d
+imul esp, dword [rax], 0x72
+imul esp, dword [rax], 0x74
+imul esp, dword [rbp + 0x20], 0x61
+imul esp, dword [rbp + 0x20], 0x61616161
+imul esp, dword [rbp + 0x4d], 0x61
+imul esp, dword [rbp + 0x4d], 0x61616161
+imul esp, dword [rbp + 0x56], 0x61
+imul esp, dword [rbp + 0x56], 0x61616161
+imul esp, dword [rbp + 0x5f], 0x61
+imul esp, dword [rbp + 0x5f], 0x61616161
+imul esp, dword [rbp + 0x61], 0x61
+imul esp, dword [rbp + 0x61], 0x61616161
+imul esp, dword [rbp + 0x65], 0x61
+imul esp, dword [rbp + 0x65], 0x61616161
+imul esp, dword [rbp + 0x68], 0x61
+imul esp, dword [rbp + 0x68], 0x61616161
+imul esp, dword [rbp + 0x69], 0x61
+imul esp, dword [rbp + 0x69], 0x61616161
+imul esp, dword [rbp + 0x6b], 0x61
+imul esp, dword [rbp + 0x6b], 0x61616161
+imul esp, dword [rbp + 0x6d], 0x61
+imul esp, dword [rbp + 0x6d], 0x61616161
+imul esp, dword [rbp + 0x72], 0x61
+imul esp, dword [rbp + 0x72], 0x61616161
+imul esp, dword [rbp + 0x74], 0x61
+imul esp, dword [rbp + 0x74], 0x61616161
+imul esp, dword [rcx + 0x20], 0x61
+imul esp, dword [rcx + 0x20], 0x61616161
+imul esp, dword [rcx + 0x4d], 0x61
+imul esp, dword [rcx + 0x4d], 0x61616161
+imul esp, dword [rcx + 0x56], 0x61
+imul esp, dword [rcx + 0x56], 0x61616161
+imul esp, dword [rcx + 0x5f], 0x61
+imul esp, dword [rcx + 0x5f], 0x61616161
+imul esp, dword [rcx + 0x61], 0x61
+imul esp, dword [rcx + 0x61], 0x61616161
+imul esp, dword [rcx + 0x65], 0x61
+imul esp, dword [rcx + 0x65], 0x61616161
+imul esp, dword [rcx + 0x68], 0x61
+imul esp, dword [rcx + 0x68], 0x61616161
+imul esp, dword [rcx + 0x69], 0x61
+imul esp, dword [rcx + 0x69], 0x61616161
+imul esp, dword [rcx + 0x6b], 0x61
+imul esp, dword [rcx + 0x6b], 0x61616161
+imul esp, dword [rcx + 0x6d], 0x61
+imul esp, dword [rcx + 0x6d], 0x61616161
+imul esp, dword [rcx + 0x72], 0x61
+imul esp, dword [rcx + 0x72], 0x61616161
+imul esp, dword [rcx + 0x74], 0x61
+imul esp, dword [rcx + 0x74], 0x61616161
+imul esp, dword gs:[rax], 0x61
+imul esp, dword gs:[rax], 0x61616161
+imul esp, dword gs:[rbp + 0x61], 0x61
+imul esp, dword gs:[rbp + 0x61], 0x61616161
+imul esp, dword gs:[rcx + 0x61], 0x61
+imul esp, dword gs:[rcx + 0x61], 0x61616161
+imul r10, qword [r14 + 0x61], 0x61
+imul r10, qword [r14 + 0x61], 0x61616161
+imul r11, qword [r15 + 0x61], 0x61
+imul r11, qword [r15 + 0x61], 0x61616161
+imul r12, qword [r13 + 0x61], 0x61
+imul r12, qword [r13 + 0x61], 0x61616161
+imul r12, qword [r8], 0x61
+imul r12, qword [r8], 0x61616161
+imul r12, qword [r9 + 0x61], 0x61
+imul r12, qword [r9 + 0x61], 0x61616161
+imul r12, qword gs:[r9 + 0x61], 0x61
+imul r13, qword [r11 + 0x61], 0x61
+imul r13, qword [r11 + 0x61], 0x61616161
+imul r13, qword [r13 + 0x61], 0x61
+imul r13, qword [r13 + 0x61], 0x61616161
+imul r13, qword [r8 + 0x61], 0x61
+imul r13, qword [r8 + 0x61], 0x61616161
+imul r13, qword [r9 + 0x61], 0x61
+imul r13, qword [r9 + 0x61], 0x61616161
+imul r14, qword [r10 + 0x61], 0x61
+imul r14, qword [r10 + 0x61], 0x61616161
+imul r14, qword [r9 + riz*2 + 0x61], 0x61
+imul r9, qword [r13 + 0x61], 0x61
+imul r9, qword [r13 + 0x61], 0x61616161
+insd dword [rdi], dx
+invalid
+jb 0x22
+jb 0x23
+jb 0x4f
+jb 0x50
+jb 0x58
+jb 0x59
+jb 0x61
+jb 0x62
+jb 0x63
+jb 0x64
+jb 0x65
+jb 0x67
+jb 0x68
+jb 0x6a
+jb 0x6b
+jb 0x6c
+jb 0x6d
+jb 0x6e
+jb 0x6f
+jb 0x70
+jb 0x74
+jb 0x75
+jb 0x76
+jb 0x77
+je 0x22
+je 0x23
+je 0x4f
+je 0x50
+je 0x58
+je 0x59
+je 0x61
+je 0x62
+je 0x63
+je 0x64
+je 0x65
+je 0x67
+je 0x68
+je 0x6a
+je 0x6b
+je 0x6c
+je 0x6d
+je 0x6e
+je 0x6f
+je 0x70
+je 0x74
+je 0x75
+je 0x76
+je 0x77
+pop r15
+pop rdi
+push 0x61612020
+push 0x6161204d
+push 0x61612056
+push 0x6161205f
+push 0x61612061
+push 0x61612065
+push 0x61612068
+push 0x61612069
+push 0x6161206b
+push 0x6161206d
+push 0x61612072
+push 0x61612074
+push 0x61614d20
+push 0x61614d4d
+push 0x61614d56
+push 0x61614d5f
+push 0x61614d61
+push 0x61614d65
+push 0x61614d68
+push 0x61614d69
+push 0x61614d6b
+push 0x61614d6d
+push 0x61614d72
+push 0x61614d74
+push 0x61615620
+push 0x6161564d
+push 0x61615656
+push 0x6161565f
+push 0x61615661
+push 0x61615665
+push 0x61615668
+push 0x61615669
+push 0x6161566b
+push 0x6161566d
+push 0x61615672
+push 0x61615674
+push 0x61615f20
+push 0x61615f4d
+push 0x61615f56
+push 0x61615f5f
+push 0x61615f61
+push 0x61615f65
+push 0x61615f68
+push 0x61615f69
+push 0x61615f6b
+push 0x61615f6d
+push 0x61615f72
+push 0x61615f74
+push 0x61616120
+push 0x6161614d
+push 0x61616156
+push 0x6161615f
+push 0x61616161
+push 0x61616165
+push 0x61616168
+push 0x61616169
+push 0x6161616b
+push 0x6161616d
+push 0x61616172
+push 0x61616174
+push 0x61616520
+push 0x6161654d
+push 0x61616556
+push 0x6161655f
+push 0x61616561
+push 0x61616565
+push 0x61616568
+push 0x61616569
+push 0x6161656b
+push 0x6161656d
+push 0x61616572
+push 0x61616574
+push 0x61616820
+push 0x6161684d
+push 0x61616856
+push 0x6161685f
+push 0x61616861
+push 0x61616865
+push 0x61616868
+push 0x61616869
+push 0x6161686b
+push 0x6161686d
+push 0x61616872
+push 0x61616874
+push 0x61616920
+push 0x6161694d
+push 0x61616956
+push 0x6161695f
+push 0x61616961
+push 0x61616965
+push 0x61616968
+push 0x61616969
+push 0x6161696b
+push 0x6161696d
+push 0x61616972
+push 0x61616974
+push 0x61616b20
+push 0x61616b4d
+push 0x61616b56
+push 0x61616b5f
+push 0x61616b61
+push 0x61616b65
+push 0x61616b68
+push 0x61616b69
+push 0x61616b6b
+push 0x61616b6d
+push 0x61616b72
+push 0x61616b74
+push 0x61616d20
+push 0x61616d4d
+push 0x61616d56
+push 0x61616d5f
+push 0x61616d61
+push 0x61616d65
+push 0x61616d68
+push 0x61616d69
+push 0x61616d6b
+push 0x61616d6d
+push 0x61616d72
+push 0x61616d74
+push 0x61617220
+push 0x6161724d
+push 0x61617256
+push 0x6161725f
+push 0x61617261
+push 0x61617265
+push 0x61617268
+push 0x61617269
+push 0x6161726b
+push 0x6161726d
+push 0x61617272
+push 0x61617274
+push 0x61617420
+push 0x6161744d
+push 0x61617456
+push 0x6161745f
+push 0x61617461
+push 0x61617465
+push 0x61617468
+push 0x61617469
+push 0x6161746b
+push 0x6161746d
+push 0x61617472
+push 0x61617474
+push r14
+push rsi
