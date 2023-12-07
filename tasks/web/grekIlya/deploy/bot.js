@@ -20,7 +20,11 @@ const visit = async url => {
             return "Provice a valid url";
 		context = await browser.createIncognitoBrowserContext()
 		const page1 = await context.newPage()
-		await page1.goto("https://task");
+		await page1.goto(process.env.TASK_URL);
+		const flag = proccess.env.FLAG;
+		page1.evaluate(() => {
+			localStorage.setItem('savedCodes',flag);
+		},{flag});
 		await sleep(2000)
 		await page1.goto(url)
 		await sleep(2000)

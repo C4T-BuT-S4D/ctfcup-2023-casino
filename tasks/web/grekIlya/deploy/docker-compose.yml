@@ -11,3 +11,5 @@ services:
       - PORT=8912
       - CAPTCHA=6Le38ykpAAAAALu8pkYQHrF7rX1RfWNN3PAy1K-f
       - CAPTCHA_SECRET=6Le38ykpAAAAAAJXsy_PVV4BTv7xGzTqZJo_tApH
+      - TASK_URL=https://slonser
+      - FLAG=[{"name":"FLAG","code":"alert(\"ctfcup{dce6b1875460593999aecda475f01d05}\")"}]
