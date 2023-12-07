@@ -6,8 +6,8 @@ services:
     ports:
       - "13001:13001"
     restart: unless-stopped
-    cpus: 1
+    cpus: 2
     pids_limit: 1024
-    mem_limit: 512m
+    mem_limit: 2g
     environment:
       TOKEN: task_token
