@@ -8,7 +8,7 @@ A terrible cipher still used by Arbalest of Siberia for some unknown reason.
 
 ## Public
 
-Provide zip archive: [public/bad-cipher.zip](public/bad-cipher.zip).
+Provide zip archive: [public/old-cipher.zip](public/old-cipher.zip).
 
 ## TLDR
 
