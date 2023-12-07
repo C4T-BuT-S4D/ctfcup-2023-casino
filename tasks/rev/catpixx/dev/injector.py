@@ -4,19 +4,19 @@ from glob import glob
 from string import ascii_lowercase
 
 FLAG = "ctfcup{suchnicec4tpixxwo4h}"
-SECRET = b"uper_Dup3r Secret String!1"
+SECRET = b"5uper_Dup3r Secret String!1"
 
-assert len(FLAG) - len(SECRET) == 1
+assert len(FLAG) == len(SECRET)
 
 LOSE_METHOD = """
-.method public static woops()V
+.method public static {name}()V
     .registers 3
 
-    invoke-static { }, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
+    invoke-static {{ }}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {{v0}}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -24,11 +24,11 @@ LOSE_METHOD = """
 
     const v2, 0x1
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {{v0, v1, v2}}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-virtual {{v0}}, Landroid/widget/Toast;->show()V
 
     return-void
 .end method
@@ -54,7 +54,7 @@ LETTER_CHECKER_METHOD = """
 
     if-eq v0, v1, :ok
 
-    invoke-static {{ }}, L{fail_handler};->woops()V
+    invoke-static {{ }}, L{fail_handler};->{fail_handler_method}()V
 
     return-void
 
@@ -69,7 +69,7 @@ LETTER_CHECKER_METHOD = """
 
 # params: letter, length, fail_handler, next_letter_class, next_letter_method
 LENGTH_CHECKER_METHOD = """
-.method public static {letter}(Ljava/lang/String;)V
+.method public static {name}(Ljava/lang/String;)V
     .registers 3
     # v0, v1, v2=p0
 
@@ -81,7 +81,7 @@ LENGTH_CHECKER_METHOD = """
 
     if-eq v0, v1, :ok
 
-    invoke-static {{ }}, L{fail_handler};->woops()V
+    invoke-static {{ }}, L{fail_handler};->{fail_handler_method}()V
 
     return-void
 
@@ -94,14 +94,14 @@ LENGTH_CHECKER_METHOD = """
 """
 
 WIN_METHOD = """
-.method public static woohoo(Ljava/lang/String;)V
+.method public static {name}(Ljava/lang/String;)V
     .registers 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Easter egg not implemented yet, sorry"
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {{v0, v1}}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -112,7 +112,7 @@ WIN_METHOD = """
 def smali_candidates(apk_dir: str) -> dict[str, str]:
     result = {}
 
-    for fn in glob(f"{apk_dir}/smali/**/*.smali"):
+    for fn in glob(f"{apk_dir}/smali/**/*.smali", recursive=True):
         with open(fn) as f:
             source = f.read()
 
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     import sys
     import random
 
-    random.seed(0x1338BEEF)
+    random.seed(0x1338BEED)
 
     if len(sys.argv) != 2:
         print(f"usage: {sys.argv[0]} <apktool output dir>", file=sys.stderr)
@@ -163,17 +163,22 @@ if __name__ == "__main__":
     patches = {}
 
     candidates = smali_candidates(sys.argv[1])
+    short_classes = [path for path in candidates if get_class_name(path).count("/") == 1]
+    long_classes = [path for path in candidates if get_class_name(path).count("/") > 1]
     all_classes = list(candidates.keys())
-    letter_classes = invert_dict(candidates)
+    letter_to_classes = invert_dict(candidates)
     
     # 1. Inject fail method
-    fail_class = random.choice(all_classes)
-    patches[fail_class] = LOSE_METHOD
+    fail_class = random.choice(long_classes)
+    fail_method = candidates[fail_class]
+    patches[fail_class] = LOSE_METHOD.format(name=fail_method)
 
     # 2. Inject win method
-    last_class = random.choice(all_classes)
-    last_method = "woohoo"
-    patches[last_class] = WIN_METHOD
+    last_class = random.choice(long_classes)
+    if last_class in patches:
+        raise ValueError(f"try another seed")
+    last_method = candidates[last_class]
+    patches[last_class] = WIN_METHOD.format(name=last_method)
 
     # 3. Inject letter checkers
 
@@ -181,7 +186,7 @@ if __name__ == "__main__":
     secret_indices = list(enumerate(SECRET))
     random.shuffle(secret_indices)
 
-    for flag_letter, (index, secret_letter) in zip(FLAG[1:][::-1], secret_indices):
+    for flag_letter, (index, secret_letter) in zip(FLAG[::-1], secret_indices):
         xor_value = random.randrange(256) 
         xor_letter = secret_letter ^ xor_value
 
@@ -194,37 +199,38 @@ if __name__ == "__main__":
             xor = hex(xor_value),
             xor_res = hex(xor_letter),
             fail_handler = get_class_name(fail_class),
+            fail_handler_method = fail_method,
             next_letter_class = get_class_name(last_class),
             next_letter_method = last_method
         )
 
         if method_name != flag_letter:
             # letter was hex encoded, use any class
-            last_class = random.choice(list(candidates.keys()))
+            last_class = random.choice(short_classes)
         else:
-            last_class = random.choice(letter_classes[flag_letter])
+            last_class = random.choice(list(set(letter_to_classes[flag_letter]) - set(long_classes)))
             if last_class in patches:
-                raise ValueError(f"class {last_class} already used, try another seed")
+                raise ValueError(f"try another seed")
 
         patches[last_class] = source
         last_method = method_name
 
     # 4. Inject length checker
-    flag_letter = FLAG[0]
+
+    length_checker_class = random.choice(long_classes)
+    if length_checker_class in patches:
+        raise ValueError(f"try another seed")
 
     source = LENGTH_CHECKER_METHOD.format(
-        letter = flag_letter,
+        name = candidates[length_checker_class],
         length = hex(len(SECRET)),
         fail_handler = get_class_name(fail_class),
+        fail_handler_method = fail_method,
         next_letter_class = get_class_name(last_class),
         next_letter_method = last_method
     )
 
-    last_class = random.choice(letter_classes[flag_letter])
-    if last_class in patches:
-        raise ValueError(f"class {last_class} already used, try another seed")
-
-    patches[last_class] = source
+    patches[length_checker_class] = source
 
     for it in patches.items():
         inject_method(*it)
