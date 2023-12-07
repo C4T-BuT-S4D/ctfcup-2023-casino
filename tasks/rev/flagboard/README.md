@@ -10,7 +10,7 @@
 ## Deploy
 
 ## Public
-Provide apk (TODO: Build)
+Provide [public/rev-flagboard.zip](zip archive).
 
 ## TL;DR
 The app's code was minified, so brute force reversing is suboptimal. To find exactly where we need to look, search for usages of `R.raw.lookforme`, which is a text file in `res/raw` containing info about the levels.
