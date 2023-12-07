@@ -1,0 +1,26 @@
+version: "2.4"
+services:
+  pwn:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "13002:13002"
+    cpus: 2
+    pids_limit: 1024
+    mem_limit: 2g
+    volumes:
+      - "./orders:/app/orders"
+    environment:
+      TOKEN: task_token
+  cleaner:
+    image: c4tbuts4d/dedcleaner:latest
+    restart: unless-stopped
+    cpus: 1
+    pids_limit: 1024
+    mem_limit: 512m
+    volumes:
+      - "./orders:/orders"
+    environment:
+      - DELETE_AFTER=15m
+      - SLEEP=15m
+      - DIRS=/orders
