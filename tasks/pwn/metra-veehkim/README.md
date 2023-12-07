@@ -8,12 +8,12 @@
 
 ```sh
 cd deploy/
-docker compose -p metra_veehkim up --build -d
+docker compose -p metra-veehkim up --build -d
 ```
 
 ## Public
 
-Provide zip file [public/metra_veehkim.zip](./public/metra_veehkim.zip)
+Provide zip file [public/metra-veehkim.zip](./public/metra-veehkim.zip)
 
 ## TLDR
 
