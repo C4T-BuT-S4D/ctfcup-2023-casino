@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Notes</title>
+</head>
+<body>
+  <h1><%= user.username =%></h1>
+  <ul id="notesList">
+    <% notes.forEach(note => { %>
+      <li>Title: <%= note.title %>, Content: <%= note.content %></li>
+    <% }); %>
+  </ul>
+
+  <script src="notes.js"></script>
+</body>
+</html>
