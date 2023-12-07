@@ -5,7 +5,7 @@ services:
       resources:
         limits:
           cpus: "2"
-          memory: 512M
+          memory: 1G
     ports:
       - "3137:3000"
     secrets:
