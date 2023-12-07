@@ -10,6 +10,8 @@ services:
     mem_limit: 512m
     volumes:
       - "./orders:/app/orders"
+    environment:
+      TOKEN: task_token
   cleaner:
     image: c4tbuts4d/dedcleaner:latest
     restart: unless-stopped

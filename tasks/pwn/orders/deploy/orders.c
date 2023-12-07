@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 #include <sys/fcntl.h>
 
 #define ITEMS_LIST_SIZE 3
@@ -82,6 +83,7 @@ void get() {
     while ((n = read(fd, &buf, ITEMS_SIZE)) == ITEMS_SIZE) {
         printf("%d. %s\n", i++, buf);
     }
+    close(fd);
 }
 
 void edit() {
@@ -103,6 +105,13 @@ void edit() {
     unsigned long n = 0;
     printf("Item number: ");
     scanf("%lu%*c", &n);
+
+    unsigned end = lseek(fd, 0, SEEK_END);
+    if (n >= (end / ITEMS_SIZE)) {
+        puts("Invalid number");
+        return;
+    }
+
     if (lseek(fd, n*ITEMS_SIZE, SEEK_SET) != n*ITEMS_SIZE) {
         puts("Invalid item");
         return;
@@ -114,11 +123,24 @@ void edit() {
     printf("New item: ");
     scanf("%lu%*c", &item_idx);
     write(fd, items[item_idx], ITEMS_SIZE);
+    close(fd);
 }
 
 int main() {
     setvbuf(stdin, NULL, _IONBF, 0);
     setvbuf(stdout, NULL, _IONBF, 0);
+    alarm(60);
+
+    char token[0x40] = {};
+    printf("Task token: ");
+    int _n = read(0, &token, 0x40-1);
+    if (_n > 0 && token[_n-1] == '\n') token[_n-1] = 0;
+    
+    if (strcmp(token, getenv("TOKEN")) != 0) {
+        puts("Invalid task token");
+        return 0;
+    }
+
     while (1) {
         puts("===== Orders =====");
         puts("1. Create new order");
