@@ -1,0 +1,17 @@
+services:
+  service:
+    build: .
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1G
+    ports:
+      - "3137:3000"
+    secrets:
+      - source: jail-flag
+        target: /flag
+    restart: unless-stopped
+secrets:
+  jail-flag:
+    environment: JAIL_FLAG
