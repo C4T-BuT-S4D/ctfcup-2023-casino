@@ -1,10 +1,15 @@
-# ppc | Veekhimese Art
+# ppc | Veehkimese Art
 
 ## Information
 
-Известнейший художник с планеты Metra Veekhim нуждается в ассистенте.
+Известнейший художник с планеты Metra Veehkim нуждается в ассистенте.
 
-Присылайте ваше портфолио на `nc ... 12345`.
+Покажите, что вы идеальный кандидат! `nc ... 12345`.
+
+Famous Metra Veehkimese painter looking to hire an assistant.
+
+Prove your skills and get the job! `nc ... 12345`
+
 
 ## Deploy
 
