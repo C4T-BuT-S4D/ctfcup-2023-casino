@@ -7,5 +7,7 @@ services:
       - "13001:13001"
     restart: unless-stopped
     cpus: 1
-    pids_limit: 64
+    pids_limit: 1024
     mem_limit: 512m
+    environment:
+      TOKEN: task_token

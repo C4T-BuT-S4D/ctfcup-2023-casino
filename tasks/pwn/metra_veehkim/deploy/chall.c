@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <sys/mman.h>
 #include <linux/mman.h>
 
@@ -16,6 +17,17 @@ int check(char c) {
 int main() {
     setvbuf(stdin, NULL, _IONBF, 0);
     setvbuf(stdout, NULL, _IONBF, 0);
+
+    char token[0x40] = {};
+    printf("Task token: ");
+    int _n = read(0, &token, 0x40-1);
+    if (_n > 0 && token[_n-1] == '\n') token[_n-1] = 0;
+    
+    if (strcmp(token, getenv("TOKEN")) != 0) {
+        puts("Invalid task token");
+        return 0;
+    }
+
     char *addr = 0;
     printf("Address: ");
     scanf("%lu%*c", &addr);
