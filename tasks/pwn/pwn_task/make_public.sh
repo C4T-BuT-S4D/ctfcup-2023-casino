@@ -4,12 +4,12 @@ set -e
 curdir=$(pwd)
 pubtemp=$(mktemp -d)
 
-mkdir $pubtemp/pwn_task
-cp deploy/docker-compose.yml deploy/Dockerfile deploy/pwn_task.c $pubtemp/pwn_task/
+mkdir $pubtemp/memgame
+cp deploy/docker-compose.yml deploy/Dockerfile deploy/memgame.c $pubtemp/memgame/
 cd $pubtemp
 
-zip -9 -r pwn_task.zip pwn_task
+zip -9 -r memgame.zip memgame
 
 cd $curdir
-mv $pubtemp/pwn_task.zip public
+mv $pubtemp/memgame.zip public
 rm -rf $pubtemp
