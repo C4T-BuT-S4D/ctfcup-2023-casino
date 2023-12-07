@@ -1,4 +1,4 @@
-# pwn | pwn_task
+# pwn | Memgame
 
 ## Information
 
@@ -13,7 +13,7 @@ docker compose up --build -d
 
 ## Public
 
-Provide zip file [public/pwn_task.zip](./public/pwn_task.zip)
+Provide zip file [public/memgame.zip](./public/memgame.zip)
 
 ## TLDR
 
