@@ -7,6 +7,7 @@
 ## Deploy
 
 ```sh
+cd deploy/
 docker compose up --build -d
 ```
 
