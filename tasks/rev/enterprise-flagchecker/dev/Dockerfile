@@ -14,4 +14,6 @@ RUN mv checker yatool/library/python/ \
     && mv task yatool/task
 
 WORKDIR /build/yatool
-RUN ./ya make -r task
+RUN --mount=type=cache,target=/root/.ya \
+    ./ya make -r task && \
+    cp -L task/task /build/task
