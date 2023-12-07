@@ -10,7 +10,7 @@
 
 
 ## Public
-Provide [zip archive](public/rev-art.zip).
+Provide [zip archive](public/ppc-art.zip).
 
 ## TL;DR
 Do what needs to be done.
