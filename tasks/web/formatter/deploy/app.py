@@ -28,9 +28,11 @@ def format():
     except:
         return jsonify({"error": "Formatting failed... Sorry!"}), 500
 
-    saved_path = Path("uploads").joinpath(f"{uuid.uuid4()}-{formatter}")
-    os.makedirs(saved_path.absolute(), exist_ok=True)
-    saved_path = str(saved_path / secure_filename(file.filename))[:100]
+    saved_path = Path("uploads")
+    saved_path /= f"{uuid.uuid4()}-{formatter}"
+    saved_path /= secure_filename(file.filename)
+    saved_path = str(saved_path)[:100]
+    os.makedirs(os.path.dirname(saved_path.absolute()), exist_ok=True)
 
     with open(saved_path, "xb") as f:
         f.write(output)
