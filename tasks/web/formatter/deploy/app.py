@@ -32,7 +32,7 @@ def format():
     saved_path /= f"{uuid.uuid4()}-{formatter}"
     saved_path /= secure_filename(file.filename)
     saved_path = str(saved_path)[:100]
-    os.makedirs(os.path.dirname(os.path.abspath(saved_path)), exist_ok=True)
+    os.makedirs(os.path.dirname(saved_path), exist_ok=True)
 
     with open(saved_path, "xb") as f:
         f.write(output)
