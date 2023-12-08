@@ -29,7 +29,7 @@ def format():
 
     saved_path = f"uploads/{uuid.uuid4()}-{formatter}"
     os.makedirs(saved_path, exist_ok=True)
-    saved_path = os.path.join(saved_path, secure_filename(file.filename))
+    saved_path = os.path.join(saved_path, secure_filename(file.filename))[:100]
 
     with open(saved_path, "xb") as f:
         f.write(output)
