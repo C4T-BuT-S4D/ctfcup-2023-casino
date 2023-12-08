@@ -6,7 +6,7 @@
 
 Any self-respecting citizen of Metra Veehkim served time in the Arbalests jail at least once.
 
-[TASK_URL/escape](TASK_URL/escape)
+[https://jail-e7348216a844510209d8a6f4898d04d9.ctfcup-2023.ru/escape](https://jail-e7348216a844510209d8a6f4898d04d9.ctfcup-2023.ru/escape)
 
 ## Deploy
 
