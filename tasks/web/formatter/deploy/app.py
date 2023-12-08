@@ -2,6 +2,7 @@ import os
 import stat
 import subprocess
 import uuid
+from pathlib import Path
 
 from flask import Flask, jsonify, request, send_file, send_from_directory
 from werkzeug.utils import secure_filename
@@ -21,15 +22,15 @@ def format():
 
     try:
         output = subprocess.check_output(
-            os.path.join("formatters", formatter),
+            os.path.abspath(Path("formatters") / formatter),
             stdin=file.stream,
         )
     except:
         return jsonify({"error": "Formatting failed... Sorry!"}), 500
 
-    saved_path = f"uploads/{uuid.uuid4()}-{formatter}"
+    saved_path = Path("uploads").joinpath(f"{uuid.uuid4()}-{formatter}").absolute()
     os.makedirs(saved_path, exist_ok=True)
-    saved_path = os.path.join(saved_path, secure_filename(file.filename))[:100]
+    saved_path = str(saved_path / secure_filename(file.filename))[:100]
 
     with open(saved_path, "xb") as f:
         f.write(output)
