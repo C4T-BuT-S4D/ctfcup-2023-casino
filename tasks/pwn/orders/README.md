@@ -4,7 +4,9 @@
 
 > Только сегодня и только сейчас! Качественные арбалеты с большой скидкой! Ищите в ближайшем магазине Арбалетов Сибири своего города!
 > 
-> nc 0 13002
+> Only today and only now! Quality arbalests with a huge discount! Find 'em in the closests Arbalety Sibiri shop of your city!
+> 
+> `nc orders-05f347c5e71ab904171cd11f1cb2b9f6.ctfcup-2023.ru 13002`
 
 ## Deploy
 
