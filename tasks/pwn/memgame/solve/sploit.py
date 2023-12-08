@@ -27,7 +27,7 @@ else:
     io = remote(sys.argv[1], 13003)
 
 
-io.sendlineafter(b'token: ', b'task_token')
+io.sendlineafter(b'token: ', sys.argv[2])
 
 init(); add(-9, 0)
 io.recvuntil(b'is ')

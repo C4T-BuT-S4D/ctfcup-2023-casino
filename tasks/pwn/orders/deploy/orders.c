@@ -8,13 +8,13 @@
 #define ITEMS_SIZE 0x10
 
 char items[ITEMS_LIST_SIZE][ITEMS_SIZE] = {
-    "Option1\0\0\0\0\0\0\0\0\0",
-    "Option2\0\0\0\0\0\0\0\0\0",
-    "Option3\0\0\0\0\0\0\0\0\0",
+    "OldRus arbalet\0\0",
+    "Кросбоу\0\0",
+    "Arbalet Sibir\0\0\0",
 };
 
 void print_menu() {
-    puts("===== Menu =====");
+    puts("===== Arbaleti =====");
     for (int i = 0; i < ITEMS_LIST_SIZE; ++i) {
         printf("%d. %s\n", i, items[i]);
     }
