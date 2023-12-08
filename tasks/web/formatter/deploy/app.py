@@ -1,5 +1,4 @@
 import os
-import re
 import stat
 import subprocess
 import uuid
@@ -22,11 +21,7 @@ def format():
 
     try:
         output = subprocess.check_output(
-            [
-                "timeout",
-                "0.5",
-                os.path.join("formatters", re.sub("[^a-z]", "", formatter)),
-            ],
+            os.path.join("formatters", formatter),
             stdin=file.stream,
         )
     except:

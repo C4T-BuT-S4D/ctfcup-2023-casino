@@ -26,8 +26,8 @@ COPY --from=formatter-builder --chown=nobody:nobody --chmod=700 /build/dir uploa
 COPY --from=formatter-builder --chown=nobody:nobody --chmod=700 /build/dir formatters
 COPY --from=formatter-builder --chown=nobody:nobody --chmod=400 /build/json formatters/json
 COPY --from=formatter-builder --chown=nobody:nobody --chmod=400 /build/yaml formatters/yaml
-COPY app.py .
+COPY app.py index.html .
 
 USER nobody
 
-CMD [ "gunicorn", "--workers=4", "--bind=:5000", "--keep-alive=0", "--timeout=3", "--access-logfile=-", "app:app" ]
+CMD [ "gunicorn", "--workers=4", "--bind=:5000", "--keep-alive=0", "--access-logfile=-", "app:app" ]
