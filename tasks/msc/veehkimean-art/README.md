@@ -1,4 +1,4 @@
-# ppc | Veehkimean Art
+# msc | Veehkimean Art
 
 ## Information
 
