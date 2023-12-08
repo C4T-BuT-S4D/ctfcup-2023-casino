@@ -3,6 +3,7 @@ import stat
 import subprocess
 import uuid
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 from flask import Flask, jsonify, request, send_file, send_from_directory
 from werkzeug.utils import secure_filename
@@ -21,10 +22,12 @@ def format():
     file = request.files["file"]
 
     try:
-        output = subprocess.check_output(
-            os.path.abspath(Path("formatters") / formatter),
-            stdin=file.stream,
-        )
+        with NamedTemporaryFile() as f:
+            file.save(f.name)
+            output = subprocess.check_output(
+                os.path.abspath(Path("formatters") / formatter),
+                input=f.name.encode() + b"\n",
+            )
     except:
         return jsonify({"error": "Formatting failed... Sorry!"}), 500
 

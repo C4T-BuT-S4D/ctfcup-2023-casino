@@ -4,14 +4,18 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
-	"io"
 	"os"
 )
 
 func main() {
 	r := bufio.NewReader(os.Stdin)
 
-	input, err := io.ReadAll(r)
+	path, err := r.ReadString('\n')
+	if err != nil {
+		os.Exit(1)
+	}
+
+	input, err := os.ReadFile(path[:len(path)-1])
 	if err != nil {
 		os.Exit(1)
 	}

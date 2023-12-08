@@ -3,22 +3,21 @@ package main
 import (
 	"bufio"
 	"os"
-
-	"gopkg.in/yaml.v3"
 )
 
+// TODO: properly format YAML
 func main() {
-	decoder := yaml.NewDecoder(bufio.NewReader(os.Stdin))
+	r := bufio.NewReader(os.Stdin)
 
-	var value any
-	if err := decoder.Decode(&value); err != nil {
+	path, err := r.ReadString('\n')
+	if err != nil {
 		os.Exit(1)
 	}
 
-	encoder := yaml.NewEncoder(os.Stdout)
-	encoder.SetIndent(2)
-
-	if err := encoder.Encode(value); err != nil {
+	input, err := os.ReadFile(path[:len(path)-1])
+	if err != nil {
 		os.Exit(1)
 	}
+
+	_, _ = os.Stdout.Write(input)
 }
