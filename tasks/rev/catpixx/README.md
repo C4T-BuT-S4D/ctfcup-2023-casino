@@ -3,6 +3,8 @@
 
 Мы тут не всё успели доделать... (Сами понимаете, айти бюджеты на Metra Veehkim невелики.) Но зацените то, что есть! Надеемся, у вас получится разглядеть что-то любопытное.
 
+We couldn't quite finish this one on time... (You know, IT budgets on Metra Veehkim are kind of thin.) Still, look at what we've already got! You might even see some peculiar things if you squint a little.
+
 ## Deploy
 
 ## Public

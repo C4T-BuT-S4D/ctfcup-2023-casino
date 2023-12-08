@@ -7,6 +7,12 @@
 
 Но почему он подсказывает, какую кнопку нужно нажать дальше?!
 
+Making you way through the corridors of Arbalest of Siberia's skyscraper, you find yourself before a reinforced steel door.
+
+Next to said door is a touchscreen. Apparently, a secret code needs to be typed on it.
+
+But why on Earth is the touchscreen telling you what to click next?!
+
 ## Deploy
 
 ## Public
