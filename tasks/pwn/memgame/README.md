@@ -3,8 +3,10 @@
 ## Information
 
 > Искуственный интеллект Megalith хорош не только в обеспечении стабильности и эффективности управления планетой, но и в играх.
+>
+> Megalith AI is great not only in providing the stability and efficiency of running a planet, but in games, too.
 > 
-> nc 0 13003
+> `nc memgame-28bedf331f28000df86f38b87c842ed9.ctfcup-2023.ru 13003`
 
 ## Deploy
 
