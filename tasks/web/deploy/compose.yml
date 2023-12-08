@@ -1,0 +1,13 @@
+services:
+  service:
+    build: .
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1G
+    ports:
+      - "5467:5000"
+    environment:
+      FLAG: "${FORMATTER_FLAG:-fakeflag}"
+    restart: unless-stopped
