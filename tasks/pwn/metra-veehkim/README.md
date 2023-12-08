@@ -4,7 +4,9 @@
 
 > Я слышал, что они на своей безлюдной планетке выдумали новый язык. Можешь попробовать в нем разобраться?
 > 
-> nc 0 13001
+> I have heard that they even came up with a new language on their lonely and deserted planet. Could you try figuring it out?
+>
+> `nc metra-veehkim-6d9d2149b126c2118a8bdd7e6f27cc32.ctfcup-2023.ru 13001`
 
 ## Deploy
 
