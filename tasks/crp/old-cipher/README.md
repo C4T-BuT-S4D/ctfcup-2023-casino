@@ -16,11 +16,8 @@ A simple block cipher with `SBOX[x] = x ^ 42`.
 
 ## Writeup (ru)
 
-Нам дан простой блочный шифр и зашифрованная картинка. Однако используется один `SBOX` и для шифрования и дешифрования. На поверку оказывается, что `SBOX[x] = x ^ 42`. Таким образом один раунд шифрования просто применяет `PBOX`, ксорит данные с ключом и `42`, а само шифрование это применный 15 раз `pbox`, ксор с некоторыми элементами ключа `xor_key` и `42` 15 раз (или 1 раз). Мы можем инвертировать `PBOX` и зная первые 16 байт (один блок, png хеадер) данных получить `xor_key` и с помошью него расшифровать всю картинку.
+Нам дан простой блочный шифр и зашифрованная картинка. Однако используется один `SBOX` и для шифрования и дешифрования. Нетрудно заметить, что `SBOX[x] = x ^ 42`. Рассмотрим подробнее один раунд шифрования `block[i] = block[PBOX[i]] ^ key[PBOX[i]] ^ 42`. Таким образом все шифрование представляется в виде `block16[i] = block15[PBOX[i]] ^ key[PBOX[i]] ^ 42 = block15[PBOX[PBOX[i]]] ^ key[PBOX[PBOX[i]]] ^ 42 ^ key[PBOX[i]] ^ 42 = ... = block0[PBOX[... PBOX[i] ...]] ^ key[PBOX[... PBOX[i] ...]] ^ 42 ^ ... ^ key[PBOX[i]] ^ 42 = block0[PBOX[... PBOX[i] ...]] ^ xor_key[i]`, где `xor_key` - некая переменная, зависящая от ключа. Не трудно заметить что это просто применненный `16` раз `PBOX` проксоренный с `xor_key`. Зная один блок шифрования (хедер png) мы можем посчитать `block0[PBOX[... PBOX[i] ...]] ^ block16[i] = xor_key[i]` и востанновить `xor_key`. Затем зная `xor_key`, мы можем получить `block0[i] = (block16 ^ xor_key)[PBOX_INV[... PBOX_INV[i] ...]]`.
 
-## Writeup (en)
-
-We are given a simple block cipher and an encrypted image. However `SBOX` is used both for encryption and decryption. Turns out `SBOX[x] = x ^ 42`. Thus an encryption round is equivalent to applying `PBOX`, xoring data with the key and `42`. The encryption itself is just `PBOX` applied 15 times, xoring with some elements of the key `xor_key` and `42` 15 times (or 1 times). We can invert `PBOX` and knowing the first 16 bytes of the message (one block, png header) and recover `xor_key` and with it decrypt the whole image.
 
 [Exploit](solve/solve.py)
 
