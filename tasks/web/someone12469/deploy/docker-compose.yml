@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/notes_app
+      - INIT_USER_USERNAME="someone12469"
+      - INIT_USER_PASSWORD="examplePassword1337!adsnkajsfas dhkbfsj"
+      - INIT_NOTE_TITLE="Flag"
+      - INIT_NOTE_CONTENT="ctfcup{54ee928f6194a378bf2e5757cb276519745b9831}"
+
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
