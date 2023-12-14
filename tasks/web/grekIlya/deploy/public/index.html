@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSFiddle-like App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/tern/tern.min.css" integrity="sha512-1sgoyWh9WoZ2BVDuNqKPZPyr5IP1x2UOEF64cCtm6lOTCqCpWb30EyjWHR/vypopSdIVJ/dfabYRPAO+gXbviQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Saved Codes</h4>
+                <ul id="sidebarList" class="list-group">
+                </ul>
+                
+            </div>
+            <div class="col-md-9">
+                <h2>Grek Ilya</h2>
+                <label for="libraries">Libraries:</label>
+                <select id="libraries" class="form-control" multiple="multiple">
+                </select>
+                <label for="themes">Theme:</label>
+                <select id="themes" class="form-control">
+                    <option value="default">Default</option>
+                    <option value="3024-day">3024 Day</option>
+                    <option value="3024-night">3024 Night</option>
+                    <option value="ambiance">Ambiance</option>
+                    <option value="base16-dark">Base16 Dark</option>
+                    <option value="base16-light">Base16 Light</option>
+                </select>
+                <textarea id="code"></textarea>
+                <button class="btn btn-primary" onclick="runCode()">Run</button>
+                <button class="btn btn-danger" onclick="clearCode()">Clear</button>
+                <button class="btn btn-warning" onclick="loadLibrary()">Load Library</button>
+                <button class="btn btn-info" onclick="changeTheme()">Change Theme</button>
+                <button class="btn btn-success" onclick="shareCode()">Share Code</button>
+                <button class="btn btn-primary" onclick="saveCode()">Save</button>
+                <div id="shareLink"></div>
+                <iframe id="result" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js" integrity="sha512-omIxBxPdObb7b3giwJtPBiB86Mey/ds7qyKFcRiaLQgDxoSR+UgCYEFO7jRZzPOCZAICabGCraEhOSa71U1zFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
