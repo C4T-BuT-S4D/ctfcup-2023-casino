@@ -21,7 +21,7 @@
 | [jail](tasks/msc/jail)                                      | misc      | [@renbou](https://github.com/renbou)                                              |
 | [mikheev-holdings](tasks/msc/mikheev-holdings)              | misc      | [@Slonser](https://github.com/Slonser)                                            |
 | [veehkimean-art](tasks/msc/veehkimean-art)                  | misc      | [@qumusabel](https://github.com/qumusabel)                                        |
-| [memgamae](tasks/pwn/memgame)                               | pwn       | [@user39043346](https://github.com/user39043346)                                  |
+| [memgame](tasks/pwn/memgame)                               | pwn       | [@user39043346](https://github.com/user39043346)                                  |
 | [metra-veehkim](tasks/pwn/metra-veehkim)                    | pwn       | [@user39043346](https://github.com/user39043346)                                  |
 | [orders](tasks/pwn/orders)                                  | pwn       | [@user39043346](https://github.com/user39043346)                                  |
 | [c4tpixx](tasks/rev/c4tpixx)                                | reverse   | [@qumusabel](https://github.com/qumusabel)                                        |
